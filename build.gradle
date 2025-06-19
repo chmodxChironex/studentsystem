@@ -1,0 +1,30 @@
+plugins {
+    id 'java'
+    id 'application'
+}
+
+group = 'me.chironex.studentsystem'
+version = '1.0-SNAPSHOT'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    implementation 'org.jetbrains:annotations:26.0.2'
+    implementation 'org.projectlombok:lombok:1.18.34'
+
+    annotationProcessor 'org.projectlombok:lombok:1.18.34'
+
+    testImplementation platform('org.junit:junit-bom:5.10.0')
+    testImplementation 'org.junit.jupiter:junit-jupiter'
+    implementation 'org.xerial:sqlite-jdbc:3.43.2.2'
+}
+
+test {
+    useJUnitPlatform()
+}
+
+application {
+    mainClass = 'me.chironex.studentsystem.StudentAdministrationApplication'
+}
